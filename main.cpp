@@ -8,6 +8,15 @@
 using namespace std;
 
 // --- FUNCTION PROTOTYPES ---
+bool wireModule();
+bool keypadModule();
+bool cipherModule();
+bool mathModule();
+bool memoryModule();
+
+void showManual();
+void saveScore(string name, double time);
+
 int main() {
     string teamName;
     double timeLeft = 120.0; // Starting time in seconds
@@ -28,6 +37,10 @@ int main() {
     if (!bombExploded && !keypadModule()) bombExploded = true;
 
     if (!bombExploded && !cipherModule()) bombExploded = true;
+
+    if (!bombExploded && !mathModule()) bombExploded = true;
+
+    if (!bombExploded && !memoryModule()) bombExploded = true;
 
     // Final Outcome
     if (bombExploded) {
