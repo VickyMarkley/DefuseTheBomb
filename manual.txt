@@ -1,0 +1,23 @@
+BOMB DEFUSAL SIMULATOR 2026
+
+[MODULE 1: THE WIRES]
+Pick the corresponding colored wire to the answer to the riddle
+
+[MODULE 2: KEYPAD]
+5
+4
+6
+4
+
+[MODULE 3: WORD CIPHER]
+The word is DECODE 
+
+[MODULE 4: MATH CHECK]
+Answers Possible:
+42
+7
+14
+4
+
+[MODULE 5: MEMORY TEST]
+Remember the numbers
