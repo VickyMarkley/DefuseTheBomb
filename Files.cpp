@@ -6,7 +6,7 @@
 
 using namespace std;
 // --- FILE I/O FUNCTIONS ---
-void showManual() {
+void showManual() { // if manual does not pop up then physically move the manual.txt into cmake-build-debug
     ifstream inFile("manual.txt");
     cout << "\n--- EMERGENCY MANUAL ---" << endl;
     if (inFile.is_open()) {
