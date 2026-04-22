@@ -19,8 +19,10 @@ void saveScore(string name, double time);
 
 int main() {
     string teamName;
-    double timeLeft = 120.0; // Starting time in seconds
     bool bombExploded = false;
+
+    srand(time(0));
+    time_t startTime = time(0);
 
     cout << "=== BOMB DEFUSAL SIMULATOR 2026 ===" << endl;
     cout << "Enter your Team Name: ";
@@ -33,22 +35,42 @@ int main() {
 
     // Requirement: Decision Structures & Functional Decomposition
     if (!wireModule()) bombExploded = true;
+    if (difftime(time(0), startTime) > 120) bombExploded = true;
 
     if (!bombExploded && !keypadModule()) bombExploded = true;
+    if (difftime(time(0), startTime) > 120) bombExploded = true;
 
     if (!bombExploded && !cipherModule()) bombExploded = true;
+    if (difftime(time(0), startTime) > 120) bombExploded = true;
 
     if (!bombExploded && !mathModule()) bombExploded = true;
+    if (difftime(time(0), startTime) > 120) bombExploded = true;
 
     if (!bombExploded && !memoryModule()) bombExploded = true;
+    if (difftime(time(0), startTime) > 120) bombExploded = true;
+
+    if (difftime(time(0), startTime) > 120) {
+        cout << "\n*** TIME'S UP! ***" << endl;
+        cout << "The bomb exploded because 120 seconds ran out." << endl;
+        bombExploded = true;
+    }
 
     // Final Outcome
     if (bombExploded) {
+        cout << "\n*** BOOM! ***" << endl;
         cout << "\n*** BOOM! ***\nThe bomb detonated. Mission failed." << endl;
-    } else {
-        cout << "\n*** SUCCESS! ***\nYou defused the bomb with time to spare!" << endl;
-        // Requirement: Streams (Writing to a file)
-        saveScore(teamName, timeLeft);
+    }
+    else {
+        time_t endTime = time(0);
+        double timeTaken = difftime(endTime, startTime);
+
+        cout << "\n*** SUCCESS! ***" << endl;
+        cout << "You defused the bomb!" << endl;
+        cout << "Time taken: " << timeTaken << " seconds" << endl;
+
+        saveScore(teamName, timeTaken);;
+        return 0;
+
     }
 
     return 0;
