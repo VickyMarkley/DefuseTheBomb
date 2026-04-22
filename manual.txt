@@ -1,10 +1,20 @@
 BOMB DEFUSAL SIMULATOR 2026
 
 [MODULE 1: THE WIRES]
-Pick the Blue wire
+Pick the any wire
 
 [MODULE 2: KEYPAD]
 The code is 1234
 
 [MODULE 3: WORD CIPHER]
 The word is DECODE 
+
+[MODULE 4: MATH CHECK]
+Answers Possible:
+42
+7
+14
+4
+
+[MODULE 5: MEMORY TEST]
+The number is 5821
