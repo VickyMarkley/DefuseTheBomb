@@ -31,27 +31,27 @@ int main() {
     // Requirement: Streams (Reading from a file)
     showManual();
 
-    cout << "\nTHE TIMER IS TICKING! 60 SECONDS REMAINING." << endl;
+    cout << "\nTHE TIMER IS TICKING! 120 SECONDS REMAINING." << endl;
 
     // Requirement: Decision Structures & Functional Decomposition
     if (!wireModule()) bombExploded = true;
-    if (difftime(time(0), startTime) > 60) bombExploded = true;
+    if (difftime(time(0), startTime) > 120) bombExploded = true;
 
     if (!bombExploded && !keypadModule()) bombExploded = true;
-    if (difftime(time(0), startTime) > 60) bombExploded = true;
+    if (difftime(time(0), startTime) > 120) bombExploded = true;
 
     if (!bombExploded && !cipherModule()) bombExploded = true;
-    if (difftime(time(0), startTime) > 60) bombExploded = true;
+    if (difftime(time(0), startTime) > 120) bombExploded = true;
 
     if (!bombExploded && !mathModule()) bombExploded = true;
-    if (difftime(time(0), startTime) > 60) bombExploded = true;
+    if (difftime(time(0), startTime) > 120) bombExploded = true;
 
     if (!bombExploded && !memoryModule()) bombExploded = true;
-    if (difftime(time(0), startTime) > 60) bombExploded = true;
+    if (difftime(time(0), startTime) > 120) bombExploded = true;
 
-    if (difftime(time(0), startTime) > 60) {
+    if (difftime(time(0), startTime) > 120) {
         cout << "\n*** TIME'S UP! ***" << endl;
-        cout << "The bomb exploded because 60 seconds ran out." << endl;
+        cout << "The bomb exploded because 120 seconds ran out." << endl;
         bombExploded = true;
     }
 
